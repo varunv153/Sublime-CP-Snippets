@@ -1,0 +1,26 @@
+<snippet>
+	<description>trans_count</description>
+	<content><![CDATA[ll dfs(vll &visited, vll &goesTo, ll i) 
+{ 
+    if (visited[i] == 1) 
+        return 0; 
+    visited[i] = 1; 
+    return ( dfs(visited, goesTo, goesTo[i]) + 1); 
+} 
+ll transposition(vll &p)
+{
+    ll n=p.size()-1,ans=0;
+    vll visited(n+1), goesTo(n+1);
+    for (ll i = 1; i <= n; i++) 
+    {
+        visited[i] = 0; 
+        goesTo[p[i]] = i; 
+    }
+    for(ll i=1;i<=n;++i)
+        if(visited[i]==0)
+            ans+=dfs(visited, goesTo, i)-1;
+    return ans;
+}]]></content>
+	<tabTrigger>trans_count</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

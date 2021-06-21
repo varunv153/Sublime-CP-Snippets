@@ -1,0 +1,12 @@
+<snippet>
+	<description>Binary To Decimal</description>
+	<content><![CDATA[ll dec(vll &bin)
+{
+	ll ans=0;
+	for(ll i=0;i<bin.size();++i)
+		ans+= tp[i]*bin[i];
+	return ans;
+}]]></content>
+	<tabTrigger>bin_to_dec</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

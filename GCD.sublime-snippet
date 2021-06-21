@@ -1,0 +1,11 @@
+<snippet>
+	<description>GCD</description>
+	<content><![CDATA[ll gcd(ll a, ll b) 
+{ 
+    if (b == 0) 
+        return a; 
+    return gcd(b, a % b);  
+}]]></content>
+	<tabTrigger>gcd</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

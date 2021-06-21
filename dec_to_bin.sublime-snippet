@@ -1,0 +1,12 @@
+<snippet>
+	<description>Deciaml to Binary</description>
+	<content><![CDATA[void binary(ll n,vll &bn)
+{
+	for(;n>0;n/=2)
+		bn.pb(n%2);
+	for(;bn.size()<63;)
+		bn.pb(0);
+} ]]></content>
+	<tabTrigger>dec_to_bin</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

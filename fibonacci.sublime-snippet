@@ -1,0 +1,23 @@
+<snippet>
+	<description>Fibonacci</description>
+	<content><![CDATA[ll fib(ll n,ll f[]) 
+{ 
+    if (n == 0) 
+        return 0; 
+    if (n == 1 || n == 2) 
+        return (f[n] = 1); 
+    if (f[n]) 
+        return f[n]; 
+    ll k = (n & 1)? (n+1)/2 : n/2; 
+    f[n] = (n & 1)? (fib(k,f)*fib(k,f) + fib(k-1,f)*fib(k-1,f)) 
+           : (2*fib(k-1,f) + fib(k,f))*fib(k,f);
+    return f[n]; 
+}
+ll fibo(ll n)
+{
+    ll f[1000] = {0};
+    return fib(n,f);
+}]]></content>
+	<tabTrigger>fibonacci</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>

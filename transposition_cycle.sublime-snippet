@@ -1,0 +1,30 @@
+<snippet>
+	<description>trans_cycle</description>
+	<content><![CDATA[void dfs(vll &visited, vll &goesTo, ll i,vll &v) 
+{ 
+    if (visited[i] == 1)
+        return;
+    v.pb(i);
+    visited[i] = 1; 
+    dfs(visited, goesTo, goesTo[i],v);
+}
+void transpositions(vll &p, vvll &cycles)
+{
+    ll n=p.size()-1;
+    vll visited(n+1),goesTo(n+1); 
+    for (ll i = 1; i <= n; i++) 
+    {
+        visited[i] = 0; 
+        goesTo[p[i]] = i; 
+    }
+    for (ll i = 1; i <= n; i++) 
+        if (visited[i] == 0) 
+        {
+            vll temp;
+            cycles.pb(temp);
+            dfs(visited,goesTo,i,cycles.back()); 
+        }
+}]]></content>
+	<tabTrigger>trans_cycle</tabTrigger>
+	<scope>source.c++, source.objc++</scope>
+</snippet>
